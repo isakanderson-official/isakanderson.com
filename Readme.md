@@ -1,6 +1,6 @@
 # Isakanderson.com
 
-##Overview
+## Overview
 ### Inspiration 
 Card design like the apple app store.
 
@@ -8,16 +8,16 @@ Card design like the apple app store.
 Amazon affiliate links in blog posts
 
 ## Pages
-###Home
+### Home
 
-###Blog
+### Blog
 
-###Courses
+### Courses
 
-##Into to Python
+## Into to Python
 
-##Begginer to Intermediate Premeire Pro
+## Begginer to Intermediate Premeire Pro
 
-##Intro to NodeJs
+## Intro to NodeJs
 
-###Contact
+### Contact
