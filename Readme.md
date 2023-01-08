@@ -14,10 +14,10 @@ Amazon affiliate links in blog posts
 
 ### Courses
 
-## Into to Python
+#### Into to Python
 
-## Begginer to Intermediate Premeire Pro
+#### Begginer to Intermediate Premeire Pro
 
-## Intro to NodeJs
+#### Intro to NodeJs
 
 ### Contact
