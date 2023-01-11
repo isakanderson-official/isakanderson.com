@@ -6,7 +6,7 @@ export const Card = (props: any) => {
   return (
     <>
       <Link href='http://youtube.com/videotechdude'>
-        <div className='border rounded-lg group cursor-pointer overflow-hidden'>
+        <div className='border rounded-xl group cursor-pointer overflow-hidden shadow-lg'>
           <Image
             className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
             src={demoPic}
@@ -14,7 +14,7 @@ export const Card = (props: any) => {
           />
 
           {/* Bottom banner */}
-          <div className='flex justify-between p-5 bg-white'>
+          <div className='flex justify-between items-center p-3 bg-white'>
             {/* Left Side */}
             <div>
               <p className='font-bold'>Post Title</p>
@@ -23,8 +23,9 @@ export const Card = (props: any) => {
             {/* Right Side */}
 
             <div>
-              <p>Catagory Title</p>
-              <button>hi</button>
+              <button className='bg-slate-200 text-[#2d81f8] font-bold rounded-full px-4 py-1'>
+                EXTERNAL LINK
+              </button>
             </div>
           </div>
         </div>

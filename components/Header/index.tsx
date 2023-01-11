@@ -2,9 +2,9 @@ import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 export default function Header() {
   return (
-    <header className=' bg-blue-400 px-5 h-[56px] sticky top-0 shadow-md align-center flex justify-between items-center'>
-      <div className='md:hidden h-[24px] w-[24px] text-white bg-red-400 items-center flex rounded-full'>
-        <MenuIcon />
+    <header className=' bg-blue-400 px-5 h-[56px] sticky top-0 shadow-md align-center flex justify-between md:justify-center items-center'>
+      <div className=' flex md:hidden justify-center items-center h-[40px] w-[40px] rounded-full hover:bg-slate-400/50 transition ease-in-out duration-100 op'>
+        <MenuIcon className=' text-white items-center ' />
       </div>
       <h1 className='text2xl font-bold text-white'>IsakAnderson.com</h1>
     </header>
