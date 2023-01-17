@@ -5,20 +5,25 @@ export default function Homepage() {
     <>
       <section id='hero' className='flex mx-[216px] h-[656px] justify-between'>
         <div id='left' className='flex items-center h-full '>
-          <h1
-            className='text-[96px] font-bold leading-[80px]
-          text-transparent bg-clip-text bg-gradient-to-t from-blue-300 to-blue-600'
-          >
-            Isak
-            <br />
-            Anderson.
-          </h1>
-          <div className='bg-orange-400 h-[10px] w-[30px] p-5'>.</div>
+          <div className=''>
+            <h1
+              className='text-[96px] font-bold leading-[80px]
+            text-transparent bg-clip-text bg-gradient-to-t from-blue-300 to-blue-600 font-sans'
+            >
+              Isak
+              <br />
+              Anderson.
+            </h1>
+            <div className='bg-orange-300 p-1 w-10 mt-4'></div>
+          </div>
         </div>
         <div id='right' className='w-[318px]'>
           <nav className='mt-10 py-5 text-2xl font-bold text-slate-800'>
             <ul className='flex gap-5'>
-              <li className='text-slate-300'>Works</li>
+              <div className='flex flex-col justify-center items-center group bg-orange-100'>
+                <li className='text-slate-300'>Works</li>
+                <div className=' bg-orange-400 w-1 p-[3px] rounded-full group-hover: visable'></div>
+              </div>
               <li>Blog</li>
               <li>Contact</li>
             </ul>
@@ -35,7 +40,7 @@ export default function Homepage() {
             </p>
 
             <div className='flex items-center'>
-              <h3 className='text-orange-400 underline underline-offset-4'>
+              <h3 className='text-orange-300 underline underline-offset-4'>
                 My Story
               </h3>
             </div>
