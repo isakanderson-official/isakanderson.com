@@ -1,13 +1,19 @@
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router';
+import { containerPadding } from '../../styles/styles';
 
 export default function Header() {
   const router = useRouter();
   return (
     <>
-      <nav className='flex w-full h-20 justify-center items-center absolute pr-4 z-50'>
-        <ul className='flex w-[1336px] justify-end gap-5 cursor-pointer text-[24px] text-slate-300'>
+      <nav className='flex w-full h-20 absolute pr-4 z-50 mt-4'>
+        <ul
+          className={
+            'flex justify-end gap-5 cursor-pointer text-[24px] text-slate-300 ' +
+            containerPadding
+          }
+        >
           {[
             {
               item: 'Works',

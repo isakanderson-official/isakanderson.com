@@ -18,6 +18,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.jsx",
     "**/*.tsx",
     "pages/api/database/[...slug].js"
   ],
