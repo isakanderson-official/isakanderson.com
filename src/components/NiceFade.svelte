@@ -4,6 +4,7 @@
 	import { fade } from 'svelte/transition';
 	let visible = false;
 	let sectionElement: any;
+	export let delay = 200;
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -30,7 +31,7 @@
 
 <div bind:this={sectionElement}>
 	{#if visible}
-		<div in:fade={{ duration: 1000, delay: 200, easing: sineInOut }}>
+		<div in:fade={{ duration: 1000, delay, easing: sineInOut }}>
 			<slot />
 		</div>
 	{/if}

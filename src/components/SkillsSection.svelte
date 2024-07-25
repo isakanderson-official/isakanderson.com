@@ -12,7 +12,7 @@
 </script>
 
 <section class="mx-auto flex flex-col items-center p-4">
-	<h2 class="mb-8 w-full max-w-4xl text-center text-4xl font-bold sm:text-left">Skills</h2>
+	<h2 class="mb-8 w-full max-w-4xl text-center text-4xl font-bold">Skills</h2>
 	<div
 		class="grid min-w-72 max-w-4xl grid-cols-1 gap-4 sm:w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
 	>
