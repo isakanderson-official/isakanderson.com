@@ -1,23 +1,19 @@
 <script>
-	import SkillCard from './SkillCard.svelte';
-
-	const skills = [
-		{ name: 'TailwindCSS', level: 'Advanced', progress: 80 },
-		{ name: 'Next.JS', level: 'Advanced', progress: 100 },
-		{ name: 'Python', level: 'Intermediate', progress: 40 },
-		{ name: 'Svelte', level: 'Beginner', progress: 10 },
-		{ name: 'Linux', level: 'Intro', progress: 60 },
-		{ name: 'Svelte', level: 'Beginner', progress: 10 }
-	].sort((a, b) => b.progress - a.progress);
+	import ProgressCard from './ProgressCard.svelte';
+	import NiceFade from './NiceFade.svelte';
+	export let items;
+	export let title;
 </script>
 
 <section class="mx-auto flex flex-col items-center p-4">
-	<h2 class="mb-8 w-full max-w-4xl text-center text-4xl font-bold">Skills</h2>
+	<h2 class="mb-8 w-full max-w-4xl text-center text-4xl font-bold">{title}</h2>
 	<div
-		class="grid min-w-72 max-w-4xl grid-cols-1 gap-4 sm:w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
+		class="grid w-full min-w-72 max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
 	>
-		{#each skills as skill}
-			<SkillCard {skill} />
+		{#each items as item, i}
+			<NiceFade delay={i * 200}>
+				<ProgressCard {item} />
+			</NiceFade>
 		{/each}
 	</div>
 </section>

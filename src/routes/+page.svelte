@@ -1,6 +1,8 @@
 <script>
 	import NiceFade from '../components/NiceFade.svelte';
 	import SkillsSection from '../components/SkillsSection.svelte';
+	import skills from '../lib/constants';
+	import { projects } from '../lib/constants';
 </script>
 
 <div class="bg-base-200">
@@ -18,5 +20,10 @@
 			</div>
 		</NiceFade>
 	</div>
-	<SkillsSection />
+	<NiceFade>
+		<SkillsSection items={skills} title="Skills" />
+	</NiceFade>
+	<NiceFade>
+		<SkillsSection items={projects} title="Projects" />
+	</NiceFade>
 </div>
