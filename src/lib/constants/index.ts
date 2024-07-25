@@ -2,7 +2,7 @@ const skills = [
 	{ name: 'TailwindCSS', progress: 80 },
 	{ name: 'Next.JS', progress: 100 },
 	{ name: 'Python', progress: 40 },
-	{ name: 'Svelte', progress: 20 },
+	{ name: 'Svelte', progress: 68 },
 	{ name: 'Linux', progress: 30 },
 	{ name: 'DaisyUI', progress: 30 },
 	{ name: 'Javascript', progress: 98 },
@@ -42,7 +42,7 @@ export const projects: Project[] = [
 	{ name: 'PrtyTime', progress: 70, description: 'Party invites made easy. Create connections.' },
 	{
 		name: 'This website',
-		progress: 60,
+		progress: 100,
 		description: 'My personal portfolio website.'
 	},
 	{

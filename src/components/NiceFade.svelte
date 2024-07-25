@@ -5,7 +5,6 @@
 	let visible = false;
 	let sectionElement: any;
 	export let delay = 200;
-	export let restProps = {};
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
