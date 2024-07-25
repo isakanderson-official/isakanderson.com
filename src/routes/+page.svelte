@@ -14,19 +14,25 @@
 					<h1 class="text-5xl font-bold">Isak Anderson</h1>
 					<p class="py-6">Empowering Freedom through Innovative Applications</p>
 					<NiceFade delay={1000}>
-						<button class="btn btn-primary">Get Started</button>
-						<button class="btn btn-secondary ml-2">Learn More</button>
+						<a href="#projects">
+							<button class="btn btn-primary">Projects</button>
+						</a>
+						<a href="#skills">
+							<button class="btn btn-secondary ml-2">Skills</button>
+						</a>
 					</NiceFade>
 				</div>
 			</div>
 		</NiceFade>
 	</div>
-	<NiceFade>
-		<SkillsSection items={skills} title="Skills" />
-	</NiceFade>
-	<div class="h-32 w-full" />
-	<NiceFade>
-		<SkillsSection items={projects} title="Projects" />
-	</NiceFade>
-	<div class="h-12 w-full" />
+	<div id="skills">
+		<NiceFade>
+			<SkillsSection items={skills} title="Skills" />
+		</NiceFade>
+	</div>
+	<div id="projects" class="py-20">
+		<NiceFade>
+			<SkillsSection items={projects} title="Projects" />
+		</NiceFade>
+	</div>
 </div>
