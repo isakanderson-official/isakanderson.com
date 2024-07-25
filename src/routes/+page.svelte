@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import NiceFade from '../components/NiceFade.svelte';
 	import SkillsSection from '../components/SkillsSection.svelte';
 	import skills from '../lib/constants';
