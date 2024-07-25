@@ -24,8 +24,9 @@
 	<NiceFade>
 		<SkillsSection items={skills} title="Skills" />
 	</NiceFade>
+	<div class="h-32 w-full" />
 	<NiceFade>
 		<SkillsSection items={projects} title="Projects" />
 	</NiceFade>
-	<div class="h-96 w-full" />
+	<div class="h-12 w-full" />
 </div>

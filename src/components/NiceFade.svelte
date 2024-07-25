@@ -5,6 +5,7 @@
 	let visible = false;
 	let sectionElement: any;
 	export let delay = 200;
+	export let restProps = {};
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -29,7 +30,7 @@
 	});
 </script>
 
-<div bind:this={sectionElement}>
+<div bind:this={sectionElement} {...$$restProps}>
 	{#if visible}
 		<div in:fade={{ duration: 1000, delay, easing: sineInOut }}>
 			<slot />
