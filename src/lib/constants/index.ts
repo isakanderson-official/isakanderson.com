@@ -3,10 +3,15 @@ const skills = [
 	{ name: 'Next.JS', progress: 100 },
 	{ name: 'Python', progress: 40 },
 	{ name: 'Svelte', progress: 20 },
-	{ name: 'Linux', progress: 60 },
+	{ name: 'Linux', progress: 30 },
 	{ name: 'DaisyUI', progress: 30 },
 	{ name: 'Javascript', progress: 98 },
-	{ name: 'ChakraUI', progress: 15 }
+	{ name: 'ChakraUI', progress: 100 },
+	{ name: 'Stripe', progress: 100 },
+	{ name: 'PostgreSQL', progress: 90 },
+	{ name: 'Supabase', progress: 30 },
+	{ name: 'MongoDB', progress: 80 },
+	{ name: 'Typescript', progress: 40 }
 ].sort((a, b) => b.progress - a.progress);
 
 const skillNames = {
@@ -29,6 +34,7 @@ type Project = {
 	progress: number;
 	description: string;
 	skills?: SkillName[];
+	href?: string;
 };
 
 export const projects: Project[] = [
@@ -42,7 +48,8 @@ export const projects: Project[] = [
 	{
 		name: 'SvelteKit Starter',
 		progress: 100,
-		description: 'Skip to building your SvelteKit app with DaisyUI.'
+		description: 'Skip to building your SvelteKit app with DaisyUI.',
+		href: 'https://github.com/isakanderson-official?tab=repositories'
 	},
 	{
 		name: 'Storybook Creator',

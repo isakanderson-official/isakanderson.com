@@ -10,6 +10,7 @@
 		<NiceFade>
 			<div class="hero-content text-center">
 				<div class="max-w-lg">
+					<span class="text-5xl">👋</span>
 					<h1 class="text-5xl font-bold">Isak Anderson</h1>
 					<p class="py-6">Empowering Freedom through Innovative Applications</p>
 					<NiceFade delay={1000}>
@@ -26,4 +27,5 @@
 	<NiceFade>
 		<SkillsSection items={projects} title="Projects" />
 	</NiceFade>
+	<div class="h-96 w-full" />
 </div>
