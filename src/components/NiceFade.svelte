@@ -34,5 +34,9 @@
 		<div in:fade={{ duration: 1000, delay, easing: sineInOut }}>
 			<slot />
 		</div>
+	{:else}
+		<div class="opacity-0">
+			<slot />
+		</div>
 	{/if}
 </div>
