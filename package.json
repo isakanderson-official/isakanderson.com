@@ -41,5 +41,6 @@
 		"@fontsource-variable/readex-pro": "^5.0.13",
 		"daisyui": "^4.12.10",
 		"marked": "^13.0.2"
-	}
+	},
+	"packageManager": "yarn@4.3.1"
 }
