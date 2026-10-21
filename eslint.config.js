@@ -28,6 +28,13 @@ export default [
 		}
 	},
 	{
+		rules: {
+			// The site is served from the domain root (no `paths.base`), so plain hrefs are correct
+			// and wrapping every link in resolve() would only add noise.
+			'svelte/no-navigation-without-resolve': 'off'
+		}
+	},
+	{
 		ignores: ['build/', '.svelte-kit/', 'dist/']
 	}
 ];

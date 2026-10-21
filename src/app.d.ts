@@ -1,4 +1,4 @@
-// See https://kit.svelte.dev/docs/types#app
+// See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -6,19 +6,7 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
-		declare namespace App {
-			interface Locals {}
-
-			interface Platform {
-				env: {
-					COUNTER: DurableObjectNamespace;
-				};
-				context: {
-					waitUntil(promise: Promise<any>): void;
-				};
-				caches: CacheStorage & { default: Cache };
-			}
-		}
+		// interface Platform {}
 	}
 }
 
