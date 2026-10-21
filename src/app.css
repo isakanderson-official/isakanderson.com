@@ -1,7 +1,146 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin '@tailwindcss/typography';
 
-body {
-	font-family: 'Readex Pro Variable', sans-serif;
+/*
+ * Design tokens. Names follow shadcn-svelte so generated components pick them up,
+ * but the palette is the site's own: black on white, classic blue links.
+ */
+:root {
+	--radius: 0;
+	--background: #ffffff;
+	--foreground: #111111;
+	--muted: #f4f4f4;
+	--muted-foreground: #595959;
+	--border: #111111;
+	--input: #111111;
+	--ring: #1a0dab;
+	--primary: #111111;
+	--primary-foreground: #ffffff;
+	--secondary: #f4f4f4;
+	--secondary-foreground: #111111;
+	--accent: #f4f4f4;
+	--accent-foreground: #111111;
+	--destructive: #b3261e;
+	--card: #ffffff;
+	--card-foreground: #111111;
+	--popover: #ffffff;
+	--popover-foreground: #111111;
+	--link: #1a0dab;
+	--link-visited: #681da8;
+	--live: #1f7a3a;
+}
+
+@theme inline {
+	--font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+	--radius-sm: var(--radius);
+	--radius-md: var(--radius);
+	--radius-lg: var(--radius);
+	--radius-xl: var(--radius);
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-link: var(--link);
+	--color-live: var(--live);
+}
+
+@layer base {
+	html {
+		@apply bg-background text-foreground;
+	}
+
+	body {
+		@apply font-serif text-[19px] leading-[1.55] antialiased;
+	}
+
+	a {
+		@apply text-link underline decoration-1 underline-offset-[3px];
+	}
+
+	a:visited {
+		color: var(--link-visited);
+	}
+
+	a:hover {
+		@apply text-foreground;
+	}
+
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-ring;
+	}
+
+	::selection {
+		@apply bg-foreground text-background;
+	}
+}
+
+@layer components {
+	/* Small uppercase monospace label used for section headings and metadata. */
+	.label {
+		@apply font-mono text-sm font-medium tracking-[0.06em] uppercase;
+	}
+
+	.meta {
+		@apply font-mono text-[13px] text-muted-foreground;
+	}
+}
+
+/* Outside any layer so it wins over the typography plugin's own colors and sizes. */
+.prose {
+	--tw-prose-body: var(--foreground);
+	--tw-prose-headings: var(--foreground);
+	--tw-prose-links: var(--link);
+	--tw-prose-bold: var(--foreground);
+	--tw-prose-quotes: var(--foreground);
+	--tw-prose-code: var(--foreground);
+	--tw-prose-hr: var(--foreground);
+	@apply max-w-none text-[19px] leading-[1.6];
+}
+
+.prose :where(code):not(:where(pre *)) {
+	@apply font-mono text-[0.85em] font-normal before:content-none after:content-none;
+}
+
+/* ↑ ↑ ↓ ↓ ← → ← → b a: you found it. */
+html.y2k body {
+	font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
+	background-color: #000080;
+	background-image: radial-gradient(#ffffff 1px, transparent 1px);
+	background-size: 24px 24px;
+}
+
+html.y2k main,
+html.y2k header,
+html.y2k footer {
+	background: #ffffcc;
+	color: #000000;
+	border: 4px ridge #c0c0c0;
+	padding: 12px;
+}
+
+html.y2k a {
+	color: #0000ee;
+}
+
+html.y2k h1 {
+	color: #ff00ff;
+	text-shadow: 2px 2px #00ffff;
 }
