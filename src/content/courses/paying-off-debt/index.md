@@ -2,6 +2,7 @@
 title: Budgeting & paying off debt
 description: How I built a budget I could stick to and paid off my debt, step by step.
 order: 1
+draft: true
 ---
 
 <!-- TODO: replace with a short intro to the course. -->

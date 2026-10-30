@@ -2,6 +2,9 @@ import { error } from '@sveltejs/kit';
 import { getCourse, getCourses } from '#lib/content.ts';
 import type { EntryGenerator, PageLoad } from './$types';
 
+// 'auto' so the build still passes when every course is a draft and there is nothing to prerender.
+export const prerender = 'auto';
+
 export const entries: EntryGenerator = () => getCourses().map(({ slug }) => ({ course: slug }));
 
 export const load: PageLoad = ({ params }) => {

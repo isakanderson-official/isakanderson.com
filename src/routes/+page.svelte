@@ -20,8 +20,7 @@
 	<p class="max-w-[560px]">
 		Hi, I'm Isak. I build apps like <a href="/projects/prtytime">PrtyTime</a>, read more books than
 		I probably should, and write down what I learn, from
-		<a href="/writing/dslr-camera-setup">my camera setup</a> to
-		<a href="/courses/paying-off-debt">how I paid off my debt</a>.
+		<a href="/writing/pro-webcam-setup">my camera setup</a> to how I paid off my debt.
 	</p>
 </section>
 
@@ -51,16 +50,18 @@
 	</ul>
 </Section>
 
-<Section label="Courses">
-	<ul class="flex flex-col gap-2.5">
-		{#each data.courses as course (course.slug)}
-			<li class="flex justify-between gap-4">
-				<a href="/courses/{course.slug}">{course.title}</a>
-				<span class="meta whitespace-nowrap">{course.lessons.length} lessons</span>
-			</li>
-		{/each}
-	</ul>
-</Section>
+{#if data.courses.length}
+	<Section label="Courses">
+		<ul class="flex flex-col gap-2.5">
+			{#each data.courses as course (course.slug)}
+				<li class="flex justify-between gap-4">
+					<a href="/courses/{course.slug}">{course.title}</a>
+					<span class="meta whitespace-nowrap">{course.lessons.length} lessons</span>
+				</li>
+			{/each}
+		</ul>
+	</Section>
+{/if}
 
 <Section label="Books">
 	<div class="flex flex-col gap-2.5">

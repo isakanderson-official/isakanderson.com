@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { getCourses } from '#lib/content.ts';
 	import { nav, site } from '#lib/site.ts';
+
+	const items = nav.filter((item) => item.href !== '/courses' || getCourses().length);
 </script>
 
 <header class="flex flex-wrap items-baseline justify-between gap-3 font-mono text-sm">
@@ -8,7 +11,7 @@
 		>{site.domain}</a
 	>
 	<nav aria-label="Main" class="flex flex-wrap gap-4">
-		{#each nav as item (item.href)}
+		{#each items as item (item.href)}
 			{@const current = page.url.pathname.startsWith(item.href)}
 			<a
 				href={item.href}
