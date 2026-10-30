@@ -2,7 +2,7 @@
 	import BookCover from '#lib/components/BookCover.svelte';
 	import Seo from '#lib/components/Seo.svelte';
 	import Stars from '#lib/components/Stars.svelte';
-	import { currentlyReading, finishedBooks, type Book } from '#lib/books.ts';
+	import { bookUrl, currentlyReading, finishedBooks, type Book } from '#lib/books.ts';
 	import { formatMonth } from '#lib/utils.ts';
 
 	const reading = currentlyReading();
@@ -21,7 +21,7 @@
 		<BookCover {book} />
 		<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 			<span>
-				{#if book.link}<a href={book.link}>{book.title}</a>{:else}{book.title}{/if}
+				<a href={bookUrl(book)} rel="sponsored">{book.title}</a>
 				<span class="text-muted-foreground">by {book.author}</span>
 			</span>
 			{#if book.note}<span class="text-[17px]">{book.note}</span>{/if}

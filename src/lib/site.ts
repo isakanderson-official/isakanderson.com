@@ -13,7 +13,9 @@ export const site = {
 	 */
 	cloudflareAnalyticsToken: '',
 	/** Base URL of the public R2 bucket that holds demo videos, without a trailing slash. */
-	mediaUrl: 'https://media.isakanderson.com'
+	mediaUrl: 'https://media.isakanderson.com',
+	/** Amazon Associates tracking ID (e.g. `yourid-20`), added to every book link. Leave empty for plain links. */
+	amazonTag: 'isakanderso05-20'
 };
 
 export const nav = [

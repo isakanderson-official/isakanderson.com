@@ -3,6 +3,7 @@
 	import Seo from '#lib/components/Seo.svelte';
 	import Stars from '#lib/components/Stars.svelte';
 	import Status from '#lib/components/Status.svelte';
+	import { bookUrl } from '#lib/books.ts';
 	import { site } from '#lib/site.ts';
 	import { formatMonth } from '#lib/utils.ts';
 	import type { PageProps } from './$types';
@@ -66,13 +67,17 @@
 		{#if data.reading}
 			<p>
 				<em>Currently reading:</em>
-				{data.reading.title} <span class="text-muted-foreground">by {data.reading.author}</span>
+				<a href={bookUrl(data.reading)} rel="sponsored">{data.reading.title}</a>
+				<span class="text-muted-foreground">by {data.reading.author}</span>
 			</p>
 		{/if}
 		<ul class="flex flex-col gap-2.5">
 			{#each data.books as book, i (i)}
 				<li class="flex justify-between gap-4">
-					<span>{book.title} <span class="text-muted-foreground">by {book.author}</span></span>
+					<span>
+						<a href={bookUrl(book)} rel="sponsored">{book.title}</a>
+						<span class="text-muted-foreground">by {book.author}</span>
+					</span>
 					{#if book.rating}<Stars rating={book.rating} />{/if}
 				</li>
 			{/each}
