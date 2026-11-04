@@ -18,25 +18,26 @@
 		{site.tagline}
 	</h1>
 	<p class="max-w-[560px]">
-		Hi, I'm Isak. I build apps like <a href="/projects/prtytime">PrtyTime</a>, read more books than
-		I probably should, and write down what I learn, from
-		<a href="/writing/pro-webcam-setup">my camera setup</a> to how I paid off my debt.
+		Hi, I'm Isak. Software engineer at <a href="https://www.vooks.com">Vooks</a>, builder of side
+		projects, reader of too many books.
 	</p>
 </section>
 
 <hr class="border-foreground" />
 
-<Section label="Projects">
-	<ul class="flex flex-col gap-2.5">
-		{#each data.projects as project (project.slug)}
-			<li>
-				<a href="/projects/{project.slug}">{project.title}</a> — {project.description}
-				<Status status={project.status} />
-			</li>
-		{/each}
-		<li><a href="/projects" class="font-mono text-sm">all projects →</a></li>
-	</ul>
-</Section>
+{#if data.projects.length}
+	<Section label="Projects">
+		<ul class="flex flex-col gap-2.5">
+			{#each data.projects as project (project.slug)}
+				<li>
+					<a href="/projects/{project.slug}">{project.title}</a> — {project.description}
+					<Status status={project.status} />
+				</li>
+			{/each}
+			<li><a href="/projects" class="font-mono text-sm">all projects →</a></li>
+		</ul>
+	</Section>
+{/if}
 
 <Section label="Writing">
 	<ul class="flex flex-col gap-2.5">

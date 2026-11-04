@@ -3,6 +3,7 @@ title: Admin Dashboard
 description: Enterprise level dashboard for managing users and data.
 status: archived
 order: 6
+draft: true
 stack: [Next.js, Tailwind CSS]
 ---
 

@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { getCourses } from '#lib/content.ts';
+	import { getCourses, getProjects } from '#lib/content.ts';
 	import { nav, site } from '#lib/site.ts';
 
-	const items = nav.filter((item) => item.href !== '/courses' || getCourses().length);
+	const empty: Record<string, boolean> = {
+		'/projects': !getProjects().length,
+		'/courses': !getCourses().length
+	};
+	const items = nav.filter((item) => !empty[item.href]);
 </script>
 
 <header class="flex flex-wrap items-baseline justify-between gap-3 font-mono text-sm">

@@ -3,6 +3,7 @@ title: AppVerify
 description: A simple API to detect disposable emails.
 status: in progress
 order: 2
+draft: true
 ---
 
 <!-- TODO: replace with the real write-up. -->

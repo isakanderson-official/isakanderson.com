@@ -3,6 +3,7 @@ title: This website
 description: My personal home on the internet.
 status: live
 order: 4
+draft: true
 stack: [SvelteKit, Svelte 5, Tailwind CSS, shadcn-svelte, mdsvex, Cloudflare Pages]
 repo: https://github.com/isakanderson-official/isakanderson.com
 ---
