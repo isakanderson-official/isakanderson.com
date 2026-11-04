@@ -1,4 +1,4 @@
-import { site } from '#lib/site.ts';
+import { amazonSearchUrl } from '#lib/content.ts';
 
 /*
  * Your bookshelf. Add a book by adding an entry here.
@@ -120,12 +120,7 @@ export function currentlyReading() {
 }
 
 export function bookUrl(book: Book) {
-	if (book.link) return book.link;
-	const url = new URL('https://www.amazon.com/s');
-	url.searchParams.set('k', `${book.title} ${book.author}`);
-	url.searchParams.set('i', 'stripbooks');
-	if (site.amazonTag) url.searchParams.set('tag', site.amazonTag);
-	return url.href;
+	return book.link ?? amazonSearchUrl(`${book.title} ${book.author}`, 'stripbooks');
 }
 
 /** Newest first; books without a `dateRead` go last. */

@@ -6,6 +6,7 @@ tags: [gear, photography]
 ---
 
 <script>
+	import AmazonLink from '#lib/components/AmazonLink.svelte';
 	import Video from '#lib/components/Video.svelte';
 </script>
 
@@ -18,11 +19,11 @@ Growing up I used my camera for pretty much everything, from experimental videos
 
 ## The camera
 
-My camera is the Sony A6500. I've had it for over 10 years now, which is kind of weird to say, and it still works great.
+My camera is the <AmazonLink q="Sony a6500">Sony A6500</AmazonLink>. I've had it for over 10 years now, which is kind of weird to say, and it still works great.
 
 ## Power
 
-Instead of running the camera off batteries, I use a hardwired battery adapter so it stays plugged in all the time. No swapping or recharging batteries, it just works hands-free.
+Instead of running the camera off batteries, I use a <AmazonLink q="Sony NP-FW50 dummy battery AC adapter">hardwired battery adapter</AmazonLink> so it stays plugged in all the time. No swapping or recharging batteries, it just works hands-free.
 
 I do sometimes forget to turn the camera off, which uses extra power. I've left it on for longer than I'd like to admit, and the camera still works fine, which I'm honestly a little shocked by.
 
@@ -32,13 +33,13 @@ The most important thing to look for in a camera is support for what's called **
 
 The other thing you need is an adapter that converts that HDMI signal to USB. It plugs into your computer, and your computer recognizes the camera as just another webcam that any app can use. That means no custom drivers or camera-specific software, which can sometimes be buggy.
 
-I've been using the Cam Link 4K. When it first came out it was around $100, which is insane for a piece of plastic that's practically the size of a USB stick. Since then a lot of more affordable options have come out. They typically get the job done without sacrificing too much quality, and you can find them on Amazon for around $30 or so. I still use my Cam Link because I already spent the big bucks on it and can't justify not using it.
+I've been using the <AmazonLink q="Elgato Cam Link 4K">Cam Link 4K</AmazonLink>. When it first came out it was around $100, which is insane for a piece of plastic that's practically the size of a USB stick. Since then a lot of <AmazonLink q="HDMI to USB capture card">more affordable options</AmazonLink> have come out. They typically get the job done without sacrificing too much quality, and you can find them on Amazon for around $30 or so. I still use my Cam Link because I already spent the big bucks on it and can't justify not using it.
 
 ## The lens
 
 The A6500 supports interchangeable lenses, so I've used a variety of them over the years. The stock zoom lens that comes with the camera works, but it doesn't really produce that nice, blurry background.
 
-What I've found works really well is the Sigma 30mm f/1.4. With the aperture somewhere around f/1.4 to f/2.8, you get a really nice background blur. The AI background blur in Zoom and other apps keeps getting better, but a real lens still looks nicer.
+What I've found works really well is the <AmazonLink q="Sigma 30mm f/1.4 DC DN Sony E">Sigma 30mm f/1.4</AmazonLink>. With the aperture somewhere around f/1.4 to f/2.8, you get a really nice background blur. The AI background blur in Zoom and other apps keeps getting better, but a real lens still looks nicer.
 
 The other benefit of a real camera is that the blur comes from the lens, not software guessing where you are. So when you hold up your hand or something you're trying to show, it doesn't randomly get cut off or smudged by whatever video call app you're using.
 
@@ -48,28 +49,38 @@ I keep the camera on autofocus, and it works pretty well with this lens. I set t
 
 ## Mounting
 
-Right now I use a clamp arm to mount the camera to the back of my monitor. It works, but it's not the best. If you're fine with a pole sticking up from behind your monitor, a telescoping pole gives you a more solid mounting point and lets you adjust the height.
+Right now I use a <AmazonLink q="camera clamp arm monitor mount">clamp arm</AmazonLink> to mount the camera to the back of my monitor. It works, but it's not the best. If you're fine with a pole sticking up from behind your monitor, a <AmazonLink q="desk mount camera pole">telescoping pole</AmazonLink> gives you a more solid mounting point and lets you adjust the height.
 
 ## Quick release
 
-The camera sits on a quick-release adapter, so I can pop it off the clamp arm (or a pole) without unscrewing the whole thing. Unscrewing it every time gets annoying fast, and having it this easy to grab means I actually take the camera out and use it for more than just meetings.
+The camera sits on a <AmazonLink q="camera quick release plate">quick-release adapter</AmazonLink>, so I can pop it off the clamp arm (or a pole) without unscrewing the whole thing. Unscrewing it every time gets annoying fast, and having it this easy to grab means I actually take the camera out and use it for more than just meetings.
 
 ## Lighting
 
-Lighting is another really important piece. For my main light I use an upright LED floor lamp from Amazon. It's pretty bright, and these lamps seem to be getting more popular.
+Lighting is another really important piece. For my main light I use an <AmazonLink q="LED floor lamp">upright LED floor lamp</AmazonLink> from Amazon. It's pretty bright, and these lamps seem to be getting more popular.
 
 I point the light at my ceiling instead of at me. My ceiling is white, which matters a lot here. It should at least be a light color, but white is best. Light bounced off a ceiling is a lot softer than light pointed straight at you, so you get softer shadows without a bulky softbox. A lot of people use softboxes, and it depends on your taste, but they're not always necessary. Bounced light has been good enough for my use cases.
 
-It's also nice to have some light in the background. How bright you want it depends on how bright your room is. Most recently I've been using some tabletop can lights with smart bulbs in them, but I think normal bulbs are fine too. I like being able to adjust the brightness, but it's also good to keep it consistent.
+It's also nice to have some light in the background. How bright you want it depends on how bright your room is. Most recently I've been using some <AmazonLink q="LED can uplight">tabletop can lights</AmazonLink> with <AmazonLink q="smart light bulb">smart bulbs</AmazonLink> in them, but I think normal bulbs are fine too. I like being able to adjust the brightness, but it's also good to keep it consistent.
 
 ## Watch out for flicker
 
 LED smart bulbs can cause one weird problem. When you dim them below full brightness, it can change how the LEDs pulse and their refresh rate. Depending on your camera's shutter speed, that can create flickering in your video, which looks pretty horrible. It can be a little tricky to sort out sometimes.
 
+## Audio
+
+Good video only goes so far if you sound bad. For audio I use the <AmazonLink q="Audio-Technica AT2020">Audio-Technica AT2020</AmazonLink>. It sounds a lot better than the mic built into my camera or laptop, and it's a solid place to start if you want a good mic without spending a ton.
+
 ## Cable management
 
 One downside of this setup is that it adds a decent number of cables. You'll have at least two: one for power, and an HDMI cable that carries the video from the camera to your computer through the adapter.
 
-You may want to grab some zip ties or twist ties to keep things tidy. It's a little bit of extra effort, but I've found a clutter-free setup pays off over time and is satisfying once it's done. Although even as I write this, I realize I need to manage my cables a little better.
+You may want to grab some <AmazonLink q="reusable cable ties">zip ties or twist ties</AmazonLink> to keep things tidy. It's a little bit of extra effort, but I've found a clutter-free setup pays off over time and is satisfying once it's done. Although even as I write this, I realize I need to manage my cables a little better.
+
+## Wrapping up
+
+None of this has to happen all at once. If you already have a camera with clean HDMI out, a capture card and a light bounced off the ceiling will get you most of the way there. The lens, the mount, and the mic you can add over time.
+
+For me the best part is that a camera I bought for photos and videos years ago gets used every single day now. If you've got an old camera sitting in a closet, it might be worth giving it a second job.
 
 _Some links on this page may be affiliate links. Buying through them supports the site at no extra cost to you._

@@ -81,6 +81,15 @@ export function mediaUrl(path: string | undefined) {
 	return /^https?:\/\//.test(path) ? path : `${site.mediaUrl}/${path.replace(/^\//, '')}`;
 }
 
+/** Amazon search link tagged with site.amazonTag. `department` narrows it, e.g. `stripbooks`. */
+export function amazonSearchUrl(query: string, department?: string) {
+	const url = new URL('https://www.amazon.com/s');
+	url.searchParams.set('k', query);
+	if (department) url.searchParams.set('i', department);
+	if (site.amazonTag) url.searchParams.set('tag', site.amazonTag);
+	return url.href;
+}
+
 export function getPosts(): Post[] {
 	return Object.entries(postFiles)
 		.map(([path, file]) => ({
