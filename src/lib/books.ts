@@ -3,9 +3,9 @@ import { amazonSearchUrl } from '#lib/content.ts';
 /*
  * Your bookshelf. Add a book by adding an entry here.
  *
- * Covers come from Open Library using the ISBN (find it on the book's page at openlibrary.org,
- * or on the back of the book). If Open Library has no cover, put a WebP image in static/books/ and set
- * `cover` to its path. Without either, a blank cover shows.
+ * Covers live in static/books/<isbn>.webp. After adding a book with an ISBN (find it on the book's
+ * page at openlibrary.org, or on the back of the book), run `pnpm covers` to download its cover from
+ * Open Library. If Open Library has none, save a WebP there by hand. Without one, a blank cover shows.
  *
  * Every book links to an Amazon search for its title and author, tagged with site.amazonTag.
  * Set `link` to point a book somewhere specific instead.
@@ -14,10 +14,8 @@ import { amazonSearchUrl } from '#lib/content.ts';
 export type Book = {
 	title: string;
 	author: string;
-	/** ISBN-10 or ISBN-13, used to fetch the cover. */
+	/** ISBN-10 or ISBN-13, used to find the cover. */
 	isbn?: string;
-	/** Cover image path, e.g. /books/x.webp. Overrides the Open Library cover. */
-	cover?: string;
 	/** 1–5 stars. Leave out while still reading. */
 	rating?: 1 | 2 | 3 | 4 | 5;
 	/** ISO date you finished it, e.g. 2026-10-21. Leave out if you don't remember. */
@@ -42,7 +40,6 @@ export const books: Book[] = [
 		title: 'The Happiest Baby Guide to Great Sleep',
 		author: 'Harvey Karp',
 		isbn: '9780062113320',
-		cover: '/books/happiest-baby-great-sleep.webp',
 		dateRead: '2026-08-11'
 	},
 	{
@@ -98,7 +95,6 @@ export const books: Book[] = [
 		title: 'Vibe Coding',
 		author: 'Gene Kim, Steve Yegge',
 		isbn: '9781966280026',
-		cover: '/books/vibe-coding.webp',
 		dateRead: '2026-08-01'
 	},
 	{ title: 'Think and Grow Rich', author: 'Napoleon Hill', isbn: '9781585424337' },
@@ -132,7 +128,6 @@ export const books: Book[] = [
 		title: 'X: Multiply Your God-Given Potential',
 		author: 'John Bevere',
 		isbn: '9781937558253',
-		cover: '/books/x.webp',
 		dateRead: '2025-10-01'
 	},
 	{ title: 'Reset', author: 'Dan Heath', isbn: '9781668062104' },
@@ -151,9 +146,8 @@ export const books: Book[] = [
 ];
 
 export function coverUrl(book: Book) {
-	if (book.cover) return book.cover;
 	if (!book.isbn) return undefined;
-	return `https://covers.openlibrary.org/b/isbn/${book.isbn.replace(/[^0-9X]/gi, '')}-M.jpg?default=false`;
+	return `/books/${book.isbn.replace(/[^0-9X]/gi, '').toUpperCase()}.webp`;
 }
 
 export function currentlyReading() {
