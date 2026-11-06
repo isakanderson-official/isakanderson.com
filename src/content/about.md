@@ -8,7 +8,7 @@ Growing up I was always making experimental videos: timelapses, stop motion, and
 
 I also believe in living debt free, through discipline and budgeting.
 
-This site is where I write down what I learn so I don't forget it, and so maybe someone else can benifit. You'll find my [writing](/writing) here.
+This site is where I write down what I learn so I don't forget it, and so maybe someone else can benefit. You'll find my [writing](/writing) here.
 
 ## Elsewhere
 

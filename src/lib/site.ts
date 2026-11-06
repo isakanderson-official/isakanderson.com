@@ -3,8 +3,7 @@ export const site = {
 	domain: 'isakanderson.com',
 	url: 'https://isakanderson.com',
 	tagline: 'I make stuff.',
-	description:
-		'I build apps, read a lot of books, and write down what I learn, from camera gear to paying off debt.',
+	description: 'I build apps, read a lot of books, and write down what I learn.',
 	github: 'https://github.com/isakanderson-official',
 	/**
 	 * Cloudflare Web Analytics token (Cloudflare dashboard → Analytics & Logs → Web Analytics).
