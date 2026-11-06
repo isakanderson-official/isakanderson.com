@@ -4,7 +4,7 @@ import { amazonSearchUrl } from '#lib/content.ts';
  * Your bookshelf. Add a book by adding an entry here.
  *
  * Covers come from Open Library using the ISBN (find it on the book's page at openlibrary.org,
- * or on the back of the book). If Open Library has no cover, put an image in static/books/ and set
+ * or on the back of the book). If Open Library has no cover, put a WebP image in static/books/ and set
  * `cover` to its path. Without either, a blank cover shows.
  *
  * Every book links to an Amazon search for its title and author, tagged with site.amazonTag.
@@ -16,7 +16,7 @@ export type Book = {
 	author: string;
 	/** ISBN-10 or ISBN-13, used to fetch the cover. */
 	isbn?: string;
-	/** Cover image path, e.g. /books/x.jpg. Overrides the Open Library cover. */
+	/** Cover image path, e.g. /books/x.webp. Overrides the Open Library cover. */
 	cover?: string;
 	/** 1–5 stars. Leave out while still reading. */
 	rating?: 1 | 2 | 3 | 4 | 5;
@@ -42,7 +42,7 @@ export const books: Book[] = [
 		title: 'The Happiest Baby Guide to Great Sleep',
 		author: 'Harvey Karp',
 		isbn: '9780062113320',
-		cover: '/books/happiest-baby-great-sleep.jpg',
+		cover: '/books/happiest-baby-great-sleep.webp',
 		dateRead: '2026-08-11'
 	},
 	{
@@ -98,7 +98,7 @@ export const books: Book[] = [
 		title: 'Vibe Coding',
 		author: 'Gene Kim, Steve Yegge',
 		isbn: '9781966280026',
-		cover: '/books/vibe-coding.jpg',
+		cover: '/books/vibe-coding.webp',
 		dateRead: '2026-08-01'
 	},
 	{ title: 'Think and Grow Rich', author: 'Napoleon Hill', isbn: '9781585424337' },
@@ -132,7 +132,7 @@ export const books: Book[] = [
 		title: 'X: Multiply Your God-Given Potential',
 		author: 'John Bevere',
 		isbn: '9781937558253',
-		cover: '/books/x.jpg',
+		cover: '/books/x.webp',
 		dateRead: '2025-10-01'
 	},
 	{ title: 'Reset', author: 'Dan Heath', isbn: '9781668062104' },
