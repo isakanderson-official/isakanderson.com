@@ -18,8 +18,7 @@
 		{site.tagline}
 	</h1>
 	<p class="max-w-[560px]">
-		Hi, I'm Isak. Software engineer at <a href="https://www.vooks.com">Vooks</a>, builder of side
-		projects, reader of too many books.
+		Hi, I'm Isak. Software engineer at <a href="https://www.vooks.com">Vooks</a> and builder of side projects.
 	</p>
 </section>
 
