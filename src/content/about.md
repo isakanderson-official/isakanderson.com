@@ -4,7 +4,7 @@ Outside of work I'm usually building something on the side, from small tools to 
 
 I love to learn, and I keep a running list of everything I've read on my [bookshelf](/books).
 
-Growing up I was always making experimental videos: timelapses, stop motion, and green screen explosions. In high school I took portrait photos on the side. That same camera ended up with a second life as a ridiculously good webcam for work meetings.
+Growing up I was always making experimental videos: timelapses, stop motion, and green screen explosions. In high school I took portrait photos on the side. That same camera ended up with a second life as a [ridiculously good webcam](/writing/pro-webcam-setup) for work meetings.
 
 I also believe in living debt free, through discipline and budgeting.
 
