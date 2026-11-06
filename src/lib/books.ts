@@ -4,7 +4,8 @@ import { amazonSearchUrl } from '#lib/content.ts';
  * Your bookshelf. Add a book by adding an entry here.
  *
  * Covers come from Open Library using the ISBN (find it on the book's page at openlibrary.org,
- * or on the back of the book). Without an ISBN, or if Open Library has no cover, a blank cover shows.
+ * or on the back of the book). If Open Library has no cover, put an image in static/books/ and set
+ * `cover` to its path. Without either, a blank cover shows.
  *
  * Every book links to an Amazon search for its title and author, tagged with site.amazonTag.
  * Set `link` to point a book somewhere specific instead.
@@ -15,6 +16,8 @@ export type Book = {
 	author: string;
 	/** ISBN-10 or ISBN-13, used to fetch the cover. */
 	isbn?: string;
+	/** Cover image path, e.g. /books/x.jpg. Overrides the Open Library cover. */
+	cover?: string;
 	/** 1–5 stars. Leave out while still reading. */
 	rating?: 1 | 2 | 3 | 4 | 5;
 	/** ISO date you finished it, e.g. 2026-10-21. Leave out if you don't remember. */
@@ -36,12 +39,12 @@ export const books: Book[] = [
 	},
 	{ title: 'Cribsheet', author: 'Emily Oster', isbn: '9780525559252', dateRead: '2026-08-12' },
 	{
-		title: 'The Happiest Baby on the Block',
+		title: 'The Happiest Baby Guide to Great Sleep',
 		author: 'Harvey Karp',
-		isbn: '9780553802559',
+		isbn: '9780062113320',
+		cover: '/books/happiest-baby-great-sleep.jpg',
 		dateRead: '2026-08-11'
 	},
-	{ title: 'Time Anxiety', author: 'Chris Guillebeau', dateRead: '2026-05-08' },
 	{
 		title: 'The $100 Startup',
 		author: 'Chris Guillebeau',
@@ -85,11 +88,27 @@ export const books: Book[] = [
 		isbn: '9780988499232',
 		dateRead: '2020-04-05'
 	},
-	{ title: 'Who Moved My Cheese?', author: 'Spencer Johnson', isbn: '9780399147241' },
-	{ title: 'Vibe Coding', author: 'Gene Kim, Steve Yegge' },
+	{
+		title: 'Who Moved My Cheese?',
+		author: 'Spencer Johnson',
+		isbn: '9780399147241',
+		dateRead: '2026-03-01'
+	},
+	{
+		title: 'Vibe Coding',
+		author: 'Gene Kim, Steve Yegge',
+		isbn: '9781966280026',
+		cover: '/books/vibe-coding.jpg',
+		dateRead: '2026-08-01'
+	},
 	{ title: 'Think and Grow Rich', author: 'Napoleon Hill', isbn: '9781585424337' },
 	{ title: 'The Meaning of Marriage', author: 'Timothy Keller', isbn: '9780525952473' },
-	{ title: 'Chase the Lion', author: 'Mark Batterson', isbn: '9781601428851' },
+	{
+		title: 'Chase the Lion',
+		author: 'Mark Batterson',
+		isbn: '9781601428851',
+		dateRead: '2025-06-01'
+	},
 	{ title: 'How to Talk to Anyone', author: 'Leil Lowndes', isbn: '9780071418584' },
 	{
 		title: 'The 7 Habits of Highly Effective People',
@@ -103,14 +122,36 @@ export const books: Book[] = [
 		isbn: '088730592X'
 	},
 
-	{ title: 'Multipliers', author: 'Liz Wiseman', isbn: '9780062663078' },
-	{ title: 'X: Multiply Your God-Given Potential', author: 'John Bevere' },
+	{
+		title: 'Multipliers',
+		author: 'Liz Wiseman',
+		isbn: '9780062663078',
+		dateRead: '2026-01-01'
+	},
+	{
+		title: 'X: Multiply Your God-Given Potential',
+		author: 'John Bevere',
+		isbn: '9781937558253',
+		cover: '/books/x.jpg',
+		dateRead: '2025-10-01'
+	},
 	{ title: 'Reset', author: 'Dan Heath', isbn: '9781668062104' },
-	{ title: 'The Lean Startup', author: 'Eric Ries', isbn: '9780307887894' },
-	{ title: 'Leaders Eat Last', author: 'Simon Sinek', isbn: '9780670923175' }
+	{
+		title: 'The Lean Startup',
+		author: 'Eric Ries',
+		isbn: '9780307887894',
+		dateRead: '2026-01-01'
+	},
+	{
+		title: 'Leaders Eat Last',
+		author: 'Simon Sinek',
+		isbn: '9780670923175',
+		dateRead: '2025-11-01'
+	}
 ];
 
 export function coverUrl(book: Book) {
+	if (book.cover) return book.cover;
 	if (!book.isbn) return undefined;
 	return `https://covers.openlibrary.org/b/isbn/${book.isbn.replace(/[^0-9X]/gi, '')}-M.jpg?default=false`;
 }
