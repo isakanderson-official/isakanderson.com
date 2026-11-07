@@ -30,6 +30,12 @@ export type Book = {
 
 export const books: Book[] = [
 	{
+		title: '$100M Offers',
+		author: 'Alex Hormozi',
+		isbn: '173747574X',
+		dateRead: '2026-11-01'
+	},
+	{
 		title: 'Tech-Wise Family',
 		author: 'Andy Crouch',
 		isbn: '9780801018664',
