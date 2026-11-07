@@ -1,0 +1,13 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "isakanderson-com",
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"compatibility_date": "2026-11-01",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "isakanderson-claps",
+			"database_id": "8f6c5606-954b-43f2-a4a4-e7995d5d986a"
+		}
+	]
+}

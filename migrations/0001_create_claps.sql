@@ -1,0 +1,11 @@
+CREATE TABLE clap_totals (
+	slug TEXT PRIMARY KEY,
+	total INTEGER NOT NULL
+) WITHOUT ROWID;
+
+CREATE TABLE clap_voters (
+	slug TEXT NOT NULL,
+	voter TEXT NOT NULL,
+	count INTEGER NOT NULL,
+	PRIMARY KEY (slug, voter)
+) WITHOUT ROWID;

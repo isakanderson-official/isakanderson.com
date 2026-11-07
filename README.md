@@ -53,6 +53,13 @@ Keep loops short (a few seconds), H.264 MP4, and under a few MB.
 
 Either turn on Web Analytics for the Pages project in the Cloudflare dashboard (no code needed), or paste a Web Analytics token into `cloudflareAnalyticsToken` in `src/lib/site.ts`.
 
+### Claps
+
+Each post has a clap button. Readers get 5 claps per post, counted by a keyed hash of their IP (IPv6 by /64), so no raw IPs are stored. Counts live in the `isakanderson-claps` D1 database, bound as `DB` in `wrangler.jsonc`, and the hash key is the `CLAPS_SECRET` Pages secret.
+
+- Schema changes go in `migrations/`, then `npx wrangler d1 migrations apply isakanderson-claps --remote` (and `--local` for dev).
+- `pnpm dev` uses a local D1 copy and reads `CLAPS_SECRET` from `.dev.vars` (`CLAPS_SECRET=anything`).
+
 ## UI components
 
 shadcn-svelte is configured in `components.json`. Components are copied into `src/lib/components/ui/`, so you own and can restyle them:

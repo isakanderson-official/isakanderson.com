@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ClapButton from '#lib/components/ClapButton.svelte';
 	import Seo from '#lib/components/Seo.svelte';
 	import { formatDate } from '#lib/utils.ts';
 	import type { PageProps } from './$types';
@@ -23,4 +24,8 @@
 	<div class="prose">
 		<data.content />
 	</div>
+
+	{#key post.slug}
+		<ClapButton slug={post.slug} />
+	{/key}
 </article>

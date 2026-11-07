@@ -15,6 +15,7 @@
 		"covers": "./scripts/fetch-covers.sh"
 	},
 	"devDependencies": {
+		"@cloudflare/workers-types": "^5.20261106.1",
 		"@eslint/js": "^10.0.1",
 		"@fontsource-variable/newsreader": "^5.3.0",
 		"@fontsource/ibm-plex-mono": "^5.3.0",
