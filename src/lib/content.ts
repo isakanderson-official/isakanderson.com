@@ -76,6 +76,11 @@ function visible<T extends { draft?: boolean }>(item: T) {
 	return showDrafts || !item.draft;
 }
 
+/** Future-dated posts are scheduled: they go live with the first build on or after their date. */
+function published(post: Post) {
+	return showDrafts || post.date <= __BUILD_DATE__;
+}
+
 export function mediaUrl(path: string | undefined) {
 	if (!path) return undefined;
 	return /^https?:\/\//.test(path) ? path : `${site.mediaUrl}/${path.replace(/^\//, '')}`;
@@ -99,6 +104,7 @@ export function getPosts(): Post[] {
 			slug: stem(path)
 		}))
 		.filter(visible)
+		.filter(published)
 		.sort((a, b) => b.date.localeCompare(a.date));
 }
 

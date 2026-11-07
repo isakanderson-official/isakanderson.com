@@ -4,7 +4,16 @@ import tailwindcss from '@tailwindcss/vite';
 import { mdsvex } from 'mdsvex';
 import { defineConfig } from 'vite';
 
+// Posts go live at 5am Pacific on their date, so a build before 5am still counts as the previous day.
+const publishHour = 5;
+const buildDate = new Date(Date.now() - publishHour * 60 * 60 * 1000).toLocaleDateString('en-CA', {
+	timeZone: 'America/Los_Angeles'
+});
+
 export default defineConfig({
+	define: {
+		__BUILD_DATE__: JSON.stringify(buildDate)
+	},
 	plugins: [
 		tailwindcss(),
 		sveltekit({

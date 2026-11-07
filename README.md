@@ -17,6 +17,8 @@ pnpm build      # production build (.svelte-kit/cloudflare)
 
 Everything lives in Markdown files under `src/content/`, with YAML frontmatter at the top. Drop a new file in, and the listings, home page, and RSS feed pick it up. Add `draft: true` to keep a file out of the built site while you work on it (drafts still show in `pnpm dev`).
 
+Posts with a future `date` are scheduled: they're left out of the build until 5am Pacific on that day, then go live with the morning rebuild. They also show in `pnpm dev`.
+
 | What          | Where                                       | Frontmatter                                                                                                                |
 | ------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Blog post     | `src/content/posts/my-post.md`              | `title`, `date` (YYYY-MM-DD), `description`, `tags`                                                                        |
@@ -64,3 +66,5 @@ The theme tokens they use (colors, radius, fonts) are at the top of `src/app.css
 ## Deploying
 
 Cloudflare Pages, with build command `pnpm build` and output directory `.svelte-kit/cloudflare`.
+
+A GitHub Action (`.github/workflows/daily-rebuild.yml`) hits a Pages deploy hook every day at 12:00 and 13:00 UTC so scheduled posts go out at 5am Pacific whether or not it's daylight saving time. To set it up, create a deploy hook for the `main` branch under the Pages project's Settings → Builds, and save its URL as the `CLOUDFLARE_DEPLOY_HOOK` repo secret. Run the workflow manually from the Actions tab to test it.
