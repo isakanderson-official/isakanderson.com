@@ -79,7 +79,7 @@
 					href={readUrl(p)}
 					target="_blank"
 					rel="noopener"
-					class="flex flex-1 items-center justify-center bg-foreground px-4 py-3 whitespace-nowrap text-background no-underline visited:text-background hover:text-background"
+					class="flex items-center justify-center bg-foreground px-4 py-3 whitespace-nowrap text-background no-underline visited:text-background hover:text-background"
 					>Read in YouVersion</a
 				>
 			{/snippet}
@@ -94,7 +94,7 @@
 				>
 			{/snippet}
 			{#if passages.length === 1}
-				<div class="flex gap-2 font-mono text-sm">
+				<div class="flex flex-col gap-2 font-mono text-sm">
 					{@render read(passages[0])}
 					{@render helps()}
 				</div>
@@ -102,17 +102,17 @@
 				{#each passages as p (p.usfm)}
 					<div class="flex flex-col gap-2">
 						<span class="meta">{p.label}</span>
-						<div class="flex font-mono text-sm">{@render read(p)}</div>
+						<div class="flex flex-col font-mono text-sm">{@render read(p)}</div>
 					</div>
 				{/each}
 				<div class="flex flex-col font-mono text-sm">{@render helps()}</div>
 			{:else}
-				<div class="flex gap-2 font-mono text-sm">
+				<div class="flex flex-col gap-2 font-mono text-sm">
 					<a
 						href={searchUrl(ref)}
 						target="_blank"
 						rel="noopener"
-						class="flex flex-1 items-center justify-center border border-border px-4 py-3 text-foreground no-underline visited:text-foreground"
+						class="flex items-center justify-center border border-border px-4 py-3 text-foreground no-underline visited:text-foreground"
 						>Find on bible.com</a
 					>
 					{@render helps()}
