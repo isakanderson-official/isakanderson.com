@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { audioUrl, parseRef, readUrl, searchUrl } from '#lib/devotions/plan.ts';
+	import { passageKeys } from '#lib/devotions/parse.ts';
+	import { parseRef, readUrl, searchUrl } from '#lib/devotions/plan.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -8,6 +9,12 @@
 	let selected = $state<string | null>(null);
 	const current = $derived(selected ?? data.today);
 	const readings = $derived(data.plan[current] ?? []);
+
+	/** That reading's notes on thisishope.com, or the main Bible Helps page if none match. */
+	const helpsFor = (ref: string) =>
+		passageKeys(ref)
+			.map((key) => data.helps[key])
+			.find(Boolean) ?? data.helpsIndex;
 
 	const toDate = (key: string) => {
 		const [y, m, d] = key.split('-').map(Number);
@@ -67,33 +74,49 @@
 				<span class="label text-muted-foreground">Reading {i + 1}</span>
 				<h2 class="text-3xl font-semibold tracking-[-0.01em]">{ref}</h2>
 			</div>
-			{#if passages.length}
+			{#snippet read(p: (typeof passages)[number])}
+				<a
+					href={readUrl(p)}
+					target="_blank"
+					rel="noopener"
+					class="flex flex-1 items-center justify-center bg-foreground px-4 py-3 whitespace-nowrap text-background no-underline visited:text-background hover:text-background"
+					>Read in YouVersion</a
+				>
+			{/snippet}
+			{#snippet helps()}
+				<a
+					href={helpsFor(ref)}
+					target="_blank"
+					rel="noopener"
+					aria-label="Bible Helps for {ref}"
+					class="flex items-center justify-center border border-border px-4 py-3 whitespace-nowrap text-foreground no-underline visited:text-foreground"
+					>Bible Helps</a
+				>
+			{/snippet}
+			{#if passages.length === 1}
+				<div class="flex gap-2 font-mono text-sm">
+					{@render read(passages[0])}
+					{@render helps()}
+				</div>
+			{:else if passages.length}
 				{#each passages as p (p.usfm)}
 					<div class="flex flex-col gap-2">
-						{#if passages.length > 1}<span class="meta">{p.label}</span>{/if}
-						<div class="flex gap-2 font-mono text-sm">
-							<a
-								href={readUrl(p)}
-								target="_blank"
-								rel="noopener"
-								class="flex flex-1 items-center justify-center bg-foreground px-4 py-3 text-background no-underline visited:text-background hover:text-background"
-								>Read in YouVersion</a
-							>
-							<a
-								href={audioUrl(p)}
-								target="_blank"
-								rel="noopener"
-								aria-label="Listen to {p.label}"
-								class="flex items-center justify-center border border-border px-4 py-3 text-foreground no-underline visited:text-foreground"
-								>Listen</a
-							>
-						</div>
+						<span class="meta">{p.label}</span>
+						<div class="flex font-mono text-sm">{@render read(p)}</div>
 					</div>
 				{/each}
+				<div class="flex flex-col font-mono text-sm">{@render helps()}</div>
 			{:else}
-				<a href={searchUrl(ref)} target="_blank" rel="noopener" class="font-mono text-sm"
-					>Find on bible.com</a
-				>
+				<div class="flex gap-2 font-mono text-sm">
+					<a
+						href={searchUrl(ref)}
+						target="_blank"
+						rel="noopener"
+						class="flex flex-1 items-center justify-center border border-border px-4 py-3 text-foreground no-underline visited:text-foreground"
+						>Find on bible.com</a
+					>
+					{@render helps()}
+				</div>
 			{/if}
 		</section>
 	{/each}
@@ -105,6 +128,6 @@
 {/if}
 
 <p class="meta">
-	Buttons open YouVersion if it's installed, or bible.com if not. Listen plays the whole chapter.
-	Reading plan from <a href={data.source}>Living Hope</a>.
+	Read opens YouVersion if it's installed, or bible.com if not. Reading plan and Bible Helps from
+	<a href={data.source}>Living Hope</a>.
 </p>

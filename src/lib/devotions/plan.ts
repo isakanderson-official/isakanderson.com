@@ -200,8 +200,5 @@ export function parseRef(input: string): Passage[] {
 /** Opens the passage in the YouVersion app when installed (universal link), else bible.com. */
 export const readUrl = (p: Passage) => `https://www.bible.com/bible/${NLT}/${p.usfm}.NLT`;
 
-/** NLT audio for the chapter (YouVersion's audio is per chapter). */
-export const audioUrl = (p: Passage) => `https://www.bible.com/audio-bible/${NLT}/${p.chapter}.NLT`;
-
 export const searchUrl = (ref: string) =>
 	`https://www.bible.com/search/bible?q=${encodeURIComponent(ref)}&version_id=${NLT}`;
